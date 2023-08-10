@@ -33,7 +33,7 @@ public class CustomWebApplicationServer {
 
           String line;
           while(!(line=br.readLine()).isEmpty()){
-            System.out.println(line+"");
+            System.out.println(line);
           }
         }
       }
