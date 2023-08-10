@@ -1,6 +1,8 @@
-package org.example;
+package org.example.calculate;
 
-public class SubtractionOperator implements NewArithmeticOperator{
+import org.example.calculate.NewArithmeticOperator;
+
+public class SubtractionOperator implements NewArithmeticOperator {
   @Override
   public boolean supports(String operator) {
     return "-".equals(operator);
