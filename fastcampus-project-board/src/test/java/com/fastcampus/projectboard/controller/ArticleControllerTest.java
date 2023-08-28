@@ -29,4 +29,15 @@ class ArticleControllerTest {
         .andExpect(view().name("articles/index"))
         .andExpect(model().attributeExists("articles"));
   }
+
+  @DisplayName("[view][GET] 게시글 상세 페이지 - 정상 호출")
+  @Test
+  public void givenNothing_whenRequestingArticleView_thenReturnsArticleView() throws Exception{
+    mvc.perform(get("/articles/1"))
+        .andExpect(status().isOk())
+        .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
+        .andExpect(view().name("articles/detail"))
+        .andExpect(model().attributeExists("article"))
+        .andExpect(model().attributeExists("articleComments"));
+  }
 }
